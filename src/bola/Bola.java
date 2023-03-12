@@ -16,7 +16,7 @@ public class Bola extends Lingkaran{
     }
     
     public double menghitungVolumeBola(){
-        return (4/3)*super.menghitungLuasLingkaran()*r;
+        return super.menghitungLuasLingkaran()*r*4/3;
     }
     
     public double menghitungLuasPermukaanBola(){

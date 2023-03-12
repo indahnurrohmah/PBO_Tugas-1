@@ -19,7 +19,7 @@ public class KerucutPenuh extends Lingkaran {
     }
     
     public double menghitungVolumeKerucut(){
-        return (1/3)*super.menghitungLuasLingkaran()*tinggi;
+        return (super.menghitungLuasLingkaran()*tinggi)/3;
     }
     
     public double menghitungLuasPermukaanKerucut(){
