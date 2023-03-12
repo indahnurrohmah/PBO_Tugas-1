@@ -22,8 +22,6 @@ public class KerucutTerpancung extends Lingkaran {
         this.tinggiKT = tinggiKT;
     }
     
-    
-    
     public double menghitungVolumeKerucutTerpancung() {
         tinggiKK = (tinggiKT*rTutup)/(rAlas-rTutup);
         tinggiKB = tinggiKT+tinggiKK;

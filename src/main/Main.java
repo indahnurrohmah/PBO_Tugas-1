@@ -119,6 +119,16 @@ public class Main {
                     case '3' :
                         break;
                     case '4' :
+                        System.out.print("Input Jari-jari Bola: ");
+                        jari = input.nextDouble();
+                        System.out.print("Input Tinggi Tembereng: ");
+                        tinggi = input.nextDouble();
+                        
+                        TemberengBola tembereng = new TemberengBola(tinggi, jari);
+                        
+                        System.out.println("Luas Permukaan Tembereng Bola = " + tembereng.menghitungLuasPermukaanTemberengBola());
+                        System.out.println("Volume Tembereng Bola = " + tembereng.menghitungVolumeTemberengBola());
+                        
                         break;
                     default :
                         System.out.println("Pilihan yang dimasukkan salah. Silakan ulangi.\n");
