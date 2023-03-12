@@ -19,7 +19,7 @@ import bola.TemberengBola;
 public class Main {
     public static void main(String[] args) {
         char pilihMenu, ulangiMenu;
-        double tinggi, jari, sudut;
+        double tinggi, jari, sudut, jariAtas, jariBawah;
         //untuk kerucut terpancung
         double jariTutup;
         
@@ -117,6 +117,20 @@ public class Main {
                     case '2' :
                         break;
                     case '3' :
+                        System.out.print("Input Jari-jari Bola: ");
+                        jari = input.nextDouble();
+                        System.out.print("Input Jari-jari Lingkaran Atas: ");
+                        jariAtas = input.nextDouble();
+                        System.out.print("Input Jari-jari Lingkaran Bawah: ");
+                        jariBawah = input.nextDouble();
+                        System.out.print("Input Tinggi Keratan: ");
+                        tinggi = input.nextDouble();
+                        
+                        KeratanBola keratan = new KeratanBola(jariAtas, jariBawah, tinggi, jari);
+                        
+                        System.out.println("Luas Selimut Keratan Bola = " + keratan.menghitungLuasSelimutKeratanBola());
+                        System.out.println("Volume Keratan Bola = " + keratan.menghitungVolumeKeratanBola());
+                        
                         break;
                     case '4' :
                         System.out.print("Input Jari-jari Bola: ");
