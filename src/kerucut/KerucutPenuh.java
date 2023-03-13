@@ -11,7 +11,7 @@ import lingkaran.Lingkaran;
  * @author HP
  */
 public class KerucutPenuh extends Lingkaran {
-    public double tinggi, garisPelukis, A, B;
+    public double tinggi, garisPelukis, a, b;
 
     public KerucutPenuh(double tinggi, double r) {
         super(r);
@@ -23,9 +23,9 @@ public class KerucutPenuh extends Lingkaran {
     }
     
     public double menghitungLuasPermukaanKerucut(){
-        A = Math.pow(r, 2);
-        B = Math.pow(tinggi, 2);
-        garisPelukis = Math.sqrt(A+B);
+        a = Math.pow(r, 2);
+        b = Math.pow(tinggi, 2);
+        garisPelukis = Math.sqrt(a+b);
                 
         return (garisPelukis*super.PHI*r)+super.menghitungLuasLingkaran();
     }
