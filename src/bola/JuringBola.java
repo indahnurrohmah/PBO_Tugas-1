@@ -5,23 +5,25 @@
  */
 package bola;
 import lingkaran.Lingkaran;
+import kerucut.KerucutPenuh;
 /**
  *
  * @author HP
  */
 public class JuringBola extends Lingkaran{
-    public double sudutPusat;
+    public double tinggiTembereng, rTembereng;
 
-    public JuringBola(double sudutPusat, double r) {
+    public JuringBola(double tinggiTembereng, double r) {
         super(r);
-        this.sudutPusat = sudutPusat;
+        this.tinggiTembereng = tinggiTembereng;
     }
     
-    public double menghitungLuasJuringBola() {
-        return (sudutPusat/360)*super.menghitungLuasLingkaran();
+    public double menghitungVolumeJuringBola() {
+        return super.menghitungLuasLingkaran()*tinggiTembereng*2/3;
     }
     
-    public double menghitungKelilingJuringBola() {
-        return ((sudutPusat/360)*super.menghitungKelilingLingkaran())+(2*r);
+    public double menghitungLuasPermukaanJuringBola() {
+        rTembereng = Math.sqrt(Math.pow(r, 2)+ Math.pow((r-tinggiTembereng), 2));
+        return super.menghitungKelilingLingkaran()*tinggiTembereng + super.PHI*rTembereng*r;
     }
 }

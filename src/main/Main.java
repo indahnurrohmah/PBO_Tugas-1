@@ -19,10 +19,7 @@ import bola.TemberengBola;
 public class Main {
     public static void main(String[] args) {
         char pilihMenu, ulangiMenu;
-        double tinggi, jari, sudut;
-        //untuk kerucut terpancung
-        double jariTutup;
-        
+        double tinggi, jari, jariBawah, jariAtas;
         
         Scanner input = new Scanner(System.in);
         
@@ -76,13 +73,13 @@ public class Main {
                 
                 else if(pilihMenu=='2'){
                     System.out.print("Input Jari-jari Alas: ");
-                    jari = input.nextDouble();  
+                    jariBawah = input.nextDouble();  
                     System.out.print("Input Jari-jari Tutup: ");
-                    jariTutup = input.nextDouble();  
+                    jariAtas = input.nextDouble();  
                     System.out.print("Input Tinggi: ");
                     tinggi = input.nextDouble();  
                 
-                    KerucutTerpancung kerucutTerpancung = new KerucutTerpancung(jari, jariTutup, tinggi);
+                    KerucutTerpancung kerucutTerpancung = new KerucutTerpancung(jariBawah, jariAtas, tinggi);
                 
                     System.out.println("Luas Permukaan Kerucut Terpancung = " + kerucutTerpancung.menghitungLuasPermukaanKerucutTerpancung());
                     System.out.println("Volume Kerucut Terpancung = " + kerucutTerpancung.menghitungVolumeKerucutTerpancung());
@@ -115,10 +112,44 @@ public class Main {
                 
                         break;
                     case '2' :
+                        System.out.print("Input Jari-jari Bola: ");
+                        jari = input.nextDouble();
+                        System.out.print("Input Tinggi Tembereng Bola: ");
+                        tinggi = input.nextDouble();  
+                        
+                        JuringBola juringBola = new JuringBola(tinggi, jari);
+                        
+                        System.out.println("Luas Permukaan Juring Bola = " + juringBola.menghitungLuasPermukaanJuringBola());
+                        System.out.println("Volume Juring Bola = " + juringBola.menghitungVolumeJuringBola());
+                        
                         break;
                     case '3' :
+                        System.out.print("Input Jari-jari Bola: ");
+                        jari = input.nextDouble();
+                        System.out.print("Input Jari-jari Lingkaran Atas: ");
+                        jariAtas = input.nextDouble();
+                        System.out.print("Input Jari-jari Lingkaran Bawah: ");
+                        jariBawah = input.nextDouble();
+                        System.out.print("Input Tinggi Keratan: ");
+                        tinggi = input.nextDouble();
+                        
+                        KeratanBola keratan = new KeratanBola(jariAtas, jariBawah, tinggi, jari);
+                        
+                        System.out.println("Luas Selimut Keratan Bola = " + keratan.menghitungLuasSelimutKeratanBola());
+                        System.out.println("Volume Keratan Bola = " + keratan.menghitungVolumeKeratanBola());
+                        
                         break;
                     case '4' :
+                        System.out.print("Input Jari-jari Bola: ");
+                        jari = input.nextDouble();
+                        System.out.print("Input Tinggi Tembereng: ");
+                        tinggi = input.nextDouble();
+                        
+                        TemberengBola tembereng = new TemberengBola(tinggi, jari);
+                        
+                        System.out.println("Luas Permukaan Tembereng Bola = " + tembereng.menghitungLuasPermukaanTemberengBola());
+                        System.out.println("Volume Tembereng Bola = " + tembereng.menghitungVolumeTemberengBola());
+                        
                         break;
                     default :
                         System.out.println("Pilihan yang dimasukkan salah. Silakan ulangi.\n");
